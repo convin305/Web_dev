@@ -2,7 +2,7 @@
 # file명
 # directory/
 
-/chamgo
+chamgo/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
