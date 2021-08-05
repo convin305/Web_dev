@@ -1,0 +1,193 @@
+/* 기본적으로 글꼴 먼저 설정하기로 결정. 
+폰트 사용은 다운로드해서 사용하는 것과 웹 폰트 사용이 있는데 
+여기서는 웹 폰트 사용.
+눈누사이트에서 가져옴 : https://noonnu.cc/font_page/365
+*/
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@keyframes rotate {
+    /* 위치를 이동시키는 것은 transform을 사용하고 y축의 위치를 변경시키므로 translateY */
+    0%{
+        transform: translateY(0);
+    }
+    25%{
+        transform: translateY(-20%);
+    }
+    50%{
+        transform: translateY(-40%);
+    }
+    75%{
+        transform: translateY(-60%);
+    }
+    100%{
+        transform: translateY(-80%);
+    }
+
+}
+
+/* main_contents의 넓이만 지정을 하면, 해당 컨텐츠 넓이로 지정된다. 
+전체넓이로 하기 위해서는 html,body도 넓이를 지정해줘야 한다.
+이건 개발자도구 > F12눌러서 마우스오버 해보면 확인 가능*/
+html{
+    width : 100%;
+    height: 100%;
+}
+
+body{
+    width : 100%;
+    height: 100%;
+    background-color: #faf1be;
+    color: #000;
+    font-family: "NEXON Lv1 Gothic OTF";
+}
+
+/* index.html에서 전체를 감싸고 있는 메인 섹션을 가져오기. 아이디가 main_contents 
+display를 flex, justify-content를 center로 두면 중앙정렬이 가능함.
+상단 마진은 margin-top
+*/
+#main_contents {
+    display: flex;
+    justify-content: center;
+    width : 100%;
+    height : 100%;
+    margin-top: 100px;
+}
+
+/* 
+main_contents를 어느 방향으로 쌓을 것인가 : flex-direction - column방향으로 쌓을 것 
+max-width로 너무 넓어지는 것을 방지할 수 있다.
+*/
+#main_contents .wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+}
+
+.title {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+/* 타이틀 폰트와 크기 설정 */
+.main_title{
+    font-family: "GmarketSansBold";
+    font-size: 50px;
+    padding-bottom: 15px;
+}
+
+/* 서브타이틀 폰트와 크기 설정
+컬러 초이스의 경우 어도비나 인스타그램의 컬러 코드 참고하면 좋다. */
+.sub_title{
+    font-size: 20px;
+    font-weight: bold;
+    color: #7F47DD;
+}
+
+/* 폰트 크기 등은 디자이너가 다 시안을 그려온다. */
+.intro {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.intro h1 {
+    font-size: 30px;
+    padding-bottom: 15px;
+}
+
+/* em은 배수단위. 3em의 경우에는 현재 있는 블럭 폰트사이즈의 3라는 뜻 
+overflow(넘치는 것)을 hidden으로 해줌으로써 넘치는 것들을 사라지게 한다.*/
+.type {
+    font-size: 25px;
+    line-height: 3em;
+    height: 3em;
+    overflow: hidden;
+}
+
+/* 애니메이션 사용을 위한 설정. 7s단위로 바뀔 것이며, infinite설정을 해서 무한 반복되도록 한다. */
+.type_list{
+    animation: rotate 7s infinite;
+}
+
+.button {
+    text-align: center;
+    padding: 50px;
+}
+
+/* 밑의 이런 설정들은 계속 수정해가면서 설정하는 것이 좋다.
+cursor : pointer를 설정해주면 마우스오버 했을 때 손가락 모양으로 바뀐다. */
+.button button {
+    width: 300px;
+    height: 50px;
+    padding: 5px;
+    border-style: none;
+    border-radius: 10px;
+    font-family: "NEXON Lv1 Gothic OTF";
+    font-size: 20px;
+    font-weight: bold;
+    background-color:white;
+    color: #7F47DD;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/* 마우스 오버하면 밑줄이 생긴다.
+hover설정을 이용해서 마우스오버하면 색상이 바뀌게 할 수도 있다. */
+.button button:hover {
+    text-decoration: underline;
+}
+
+.result_data {
+    display: flex;
+    justify-content: center;
+}
+
+.result_data .data_wrap {
+    width: 270px;
+    padding: 15px;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    line-height: 1.5;
+    margin-bottom: 50px;
+}
+
+
+.result_data h3 {
+    text-align: center;
+    font-size:  20px;
+    font-weight: bold;
+    padding: 20px 0 30px;
+}
+
+.result_data li {
+    font-size: 15px;
+    padding-bottom: 20px;
+}
+
+.weniv {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.weniv a {
+    width: 100px;
+}
+
+.weniv img {
+    width: 100%;
+    height: auto;
+}
