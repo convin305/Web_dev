@@ -1,0 +1,43 @@
+<!-- 폰트 사이즈  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!-- 
+    px은 고정단위, em은 내 부모의 폰트사이즈의 배수단위
+    rem은 바디의 폰트사이즈에만 영향을 받는다. 
+
+    width는 부모가 가진 넓이의 퍼센트에 대해서 설정을 할 수 있다. 
+    그러나 height는 퍼센트로는 설정하지 못하므로 vh(전체 보이는 화면기준 세로)로 설정한다. 
+    물론 vw도 있음 
+ -->
+    <style>
+        .one{font-size: 32px;}
+        .two{font-size: 2rem;}
+        .three{font-weight: normal;}
+        div{font-size: 8px;}
+        .box-one{
+            width: 200px;
+            height: 100px;
+            background-color: green;
+        }
+        .box-two{
+            width: 50%;
+            height: 10vh;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <p class="one">hello world</p>
+    <div>
+        <p class="two">hello world</p>
+    </div>
+    <h1 class="three">hello world</h1>
+    <div class="box-one"></div>
+    <div class="box-two"></div>
+</body>
+</html>
