@@ -1,0 +1,28 @@
+<!-- 선택자 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {color : purple;}
+        .one {color : red;}
+        .two {border: solid 1px black;}
+        #three {font-style: italic;}
+    </style>
+    <!-- 
+    범용선택자 : * 모든 것이 다 변한다. 어떤 태그를 쓰더라도 
+    타입선택자 : h1 등 특정 태그를 지칭해서 그 속성을 변경시키는 것
+    class선택자 : 여러 태그 중 클래스를 지칭하여 속성을 변경시킨다. 클래스는 중복설정이 가능하다. 
+    id선택자 : id는 중복 설정이 불가능하고, 한 페이지에서 한번만 사용이 가능하다.  -->
+</head>
+<body>
+    <h1>hello world</h1>
+    <p class="one">hello wolrd</p>
+    <p class="one two">hello wolrd</p>
+    <p id="three">hello wolrd</p>
+    <p>hello wolrd</p>
+</body>
+</html>
